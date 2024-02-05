@@ -1,0 +1,222 @@
+.container{ /*container de alinhamento*/
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.bg-home{
+    position: relative;
+
+}
+
+.bg-home:before{
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(6,18,30,0.1), #06121e), url('../assets/bg.svg');
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    opacity: 0.9;
+}
+
+// ------------ HERO ---------------
+
+.hero{
+    color: $white-normal;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column; /*coloca o h1 acima do p e acima do botao*/
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+
+    h1{
+        text-align: center;
+        line-height: 150%;
+        max-width: 940px;
+        font-size: 46px;
+    }
+
+    p{
+        text-align: center;
+        margin: 14px 0;
+    }
+}
+
+.button-contact{
+    padding: 14px 28px;
+    color: $white-normal;
+    background-color: $red-normal;
+    border: 0;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 14px 0;
+}
+
+.button-contact:hover{
+    animation: scaleButton 0.8s alternate infinite;
+}
+
+@keyframes scaleButton{
+    from{
+        transform: scale(1);
+    }to {
+        transform: scale(1.08);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .hero{
+        min-height: 60vh;
+
+        h1{
+            font-size: 34px;
+            padding: 0 14px;
+            width:100%;
+        }
+
+        p{
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    .hero h1{
+        font-size: 24px;
+    }
+
+}
+
+// -----------------------------------
+
+//----------------- ABOUT ------------
+
+.about{
+    background-color: $primary-normal;
+    overflow: hidden; /*esconde o que passa do tamanho*/
+    color: $white-normal;
+}
+
+.about-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 34px 14px 64px 14px;
+
+    img{
+        max-width: 570px;
+    }
+}
+
+.about-content div{
+    flex: 1; /* as duas divs habitam metade da tela */
+}
+
+.about-description{
+    h2{
+        font-size: 38px;
+        margin-bottom: 24px;
+        font-weight: 700;
+    }
+
+    p{
+
+        margin-bottom: 16px;
+        line-height: 150%;
+    }
+    margin-left: 90px;
+}
+
+@media screen and (max-width: 768px) {
+    .about-content{
+        flex-direction: column; /* coloca um abaixo do outro */
+    }
+
+    .about-description{
+        margin-left: 25px;
+    }
+}
+
+// -----------------------------------------------
+//------------------------FOOOTER---------------------
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 0;
+    gap: 24px;
+    color: $white-normal;
+}
+
+.footer-icons{
+    display: flex;
+    gap: 8px;
+    color: $white-normal;
+}
+
+@media screen and (max-width:768px){
+    .footer p{
+        max-width: 560px;
+        text-align: center;
+    }
+}
+
+// -----------------------------------------------
+// -------------------BOTAOWPP--------------------
+
+.btn-whatsapp{
+    position: fixed;
+    bottom: 14px;
+    right: 24px;
+    z-index: 99;
+    
+    
+    img{
+        max-width: 74px;
+        transition: transform 0.4s;/*efeito*/
+    }
+
+    img:hover{
+        transform: scale(1.1);/*efeito*/
+    }
+}
+
+.btn-whatsapp .tooltip-text{
+    visibility: hidder;
+    position: absolute;
+    width: 128px;
+    top: 8px;
+    left: -144px;
+    padding: 4px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: $black-normal;
+    color: $white-normal;
+    opacity: 0;
+    transition: opacity 0.4s;
+
+}
+
+.btn-whatsapp:hover .tooltip-text{
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px){
+    .btn-whatsapp{
+        img{
+            max-width: 60px;
+        }
+    }
+}

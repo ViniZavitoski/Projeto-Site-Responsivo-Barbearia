@@ -1,0 +1,173 @@
+header{
+    width: 100%;
+}
+
+.header-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-icons{
+    display: flex;
+    gap: 14px;
+}
+
+i{
+    color: $white-normal;
+}
+
+.header-icons a:hover{
+    i{
+        animation: translateY 0.8s; /*implementando a animaçao*/
+        color: $red-normal;
+    }
+}
+
+@keyframes translateY { /*animaçao dos icones*/
+    from{
+        transform: translateY(0) scale(1);
+    } to{
+        transform: translateY(-8px) scale(1.1);
+    }
+}
+
+.header-button{
+    border: 1px solid $white-normal;
+    border-radius: 4px;
+    padding: 8px 24px;
+    color: $white-normal;
+    background-color: transparent;
+    transition: background-color 0.8s; /*faz com que o botao demore pra ficar vermelho ao passar o mouse*/
+}
+
+.header-button:hover{
+    border: 1px solid $red-light;
+    background-color: $red-light;
+}
+
+.header-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px){
+    
+    .header-content{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    i{
+        margin-top: 16px;
+        font-size: 34px;
+    }
+
+    .header-logo img{
+        width: 168px;
+        margin-top: 46px;
+    }
+
+    .header-button{
+        display: none;
+    }
+}
+
+//--------------SERVICES------------------
+
+.services{
+    background-color: $white-normal;
+    color: $black-normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 14px;
+}
+
+.services img{
+    margin:0 auto;
+    width: 354px;
+    text-align: center;
+    display: flex;
+}
+
+.services-content h2{
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.services-content p{
+    line-height: 150%;
+    margin-bottom: 14px;
+    text-align: center;
+    max-width: 780px;
+}
+
+.haircuts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 0 44px 34px 44px;
+}
+
+.haircut{
+    flex: 1; /*tentam ocupar o tamanho maximo*/
+    display: flex;
+    flex-direction: column;
+    background-color: $white-normal;
+    border-radius: 8px;
+    box-shadow: 0px -1px 17px -4px rgba(0,0,0,0.45);
+
+    overflow: hidden; /*tudo que estiver fora esconde=arredonda a borda da img*/
+
+    img{
+        width: 100%;
+        max-width: 354px;
+        transition: transform 0.25s ;
+    }
+
+}
+
+.haircut img:hover{
+    transform: scale(1.2);
+    z-index: 1;
+
+}
+
+.haircut-info{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+    background-color: $white-normal;
+    z-index: 99; /*para nao sobrepor o titulo*/
+}
+
+.haircut-info button{
+    color: $white-normal;
+    background-color: $red-normal;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 0;
+    cursor: default;
+}
+
+@media screen and (max-width: 768px){
+    .haircuts{
+        flex-direction: column;
+    }
+
+    .haircut img{
+        max-width: 740px;
+    }
+}
+
+//----------------------MAPA-----------------------
+
+
